@@ -15,6 +15,8 @@ ADD config.yaml clash/config.yaml
 
 ADD clash-linux-armv8 clash/clash-linux-armv8
 RUN chmod +x clash/clash-linux-armv8
+
+VOLUME /clash
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
 ENTRYPOINT /configure.sh
