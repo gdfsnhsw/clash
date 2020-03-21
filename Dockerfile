@@ -2,6 +2,7 @@ FROM arm64v8/debian
 #更新源
 RUN apt-get -y update && apt-get -y upgrade
 #安装ssh
+RUN apt install wget -y
 RUN apt install openssh-server -y
 RUN apt install iptables -y
 
