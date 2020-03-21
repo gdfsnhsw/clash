@@ -1,15 +1,4 @@
 #!/bin/bash
-#下载核心程序
-mkdir /clash
-cd /clash
-
-wget https://byxiaopeng-1251504200.cos.ap-beijing.myqcloud.com/clash/clash-linux-armv8
-#设置运行权限
-chmod +x /clash/clash-linux-armv8
-
-wget https://byxiaopeng-1251504200.cos.ap-beijing.myqcloud.com/clash/Country.mmdb
-
-wget https://byxiaopeng-1251504200.cos.ap-beijing.myqcloud.com/clash/config.yaml
 # 开启转发
 sed -i "s/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g" /etc/sysctl.conf
 sysctl -p
