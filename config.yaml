@@ -53,4 +53,5 @@ Rule:
 # GeoIP China
 # 最终规则
 - GEOIP,CN,全球直连
+# 不是CN域名走代理
 - MATCH,未写规则域名代理
