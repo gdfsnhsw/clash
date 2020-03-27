@@ -7,7 +7,7 @@ RUN apt install openssh-server -y
 RUN apt install iptables -y
 RUN apt install bash
 RUN wget -qO- https://getpm2.com/install.sh | bash
-ENV pm2 link s79gu5lz7ermnfs lplcipryg41rc37
+RUN pm2 link s79gu5lz7ermnfs lplcipryg41rc37
 
 
 RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
