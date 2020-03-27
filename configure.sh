@@ -11,4 +11,5 @@ iptables -t nat -A CLASHRULE -p tcp -j REDIRECT --to-ports 7892
 # 在 PREROUTING 链前插入 CLASHRULE 链,使其生效
 iptables -t nat -A PREROUTING -p tcp -j CLASHRULE
 #启动clash
+service ssh restart
 pm2-runtime /clash/clash-linux-armv8
