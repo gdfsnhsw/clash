@@ -5,8 +5,10 @@ RUN apt-get -y update && apt-get -y upgrade
 RUN apt install wget -y
 RUN apt install openssh-server -y
 RUN apt install iptables -y
-RUN apt install npm -y
 RUN npm install pm2 -g
+ENV PM2_PUBLIC_KEY lplcipryg41rc37
+ENV PM2_SECRET_KEY s79gu5lz7ermnfs
+
 
 RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 RUN echo root:123456789 |chpasswd root
@@ -22,3 +24,5 @@ VOLUME /clash
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
 ENTRYPOINT /configure.sh
+
+CMD ["pm2-runtime", "app.js"]
