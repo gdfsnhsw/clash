@@ -20,8 +20,6 @@ ADD config.yaml /root/.config/clash/config.yaml
 
 ADD clash-linux-armv8 clash/clash-linux-armv8
 RUN chmod +x clash/clash-linux-armv8
-#启动ssh
-RUN service ssh restart
 VOLUME /root/.config/clash
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
