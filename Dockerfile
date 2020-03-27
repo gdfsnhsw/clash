@@ -6,9 +6,8 @@ RUN apt install wget -y
 RUN apt install openssh-server -y
 RUN apt install iptables -y
 RUN apt install npm -y
-RUN npm install pm2 -g
-ENV PM2_PUBLIC_KEY lplcipryg41rc37
-ENV PM2_SECRET_KEY s79gu5lz7ermnfs
+RUN npm install -g pm2
+ENV pm2 link s79gu5lz7ermnfs lplcipryg41rc37
 
 
 RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
