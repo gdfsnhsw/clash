@@ -24,5 +24,3 @@ VOLUME /clash
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
 ENTRYPOINT /configure.sh
-
-CMD ["pm2-runtime", "app.js"]
