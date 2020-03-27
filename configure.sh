@@ -12,4 +12,5 @@ iptables -t nat -A CLASHRULE -p tcp -j REDIRECT --to-ports 7892
 iptables -t nat -A PREROUTING -p tcp -j CLASHRULE
 #启动clash
 service ssh restart
+echo -e "nameserver 192.168.50.53" > /etc/resolv.conf
 pm2-runtime /clash/clash-linux-armv8
