@@ -5,8 +5,8 @@ RUN apt-get -y update && apt-get -y upgrade
 RUN apt install wget -y
 RUN apt install openssh-server -y
 RUN apt install iptables -y
-RUN apt install npm -y
-RUN npm install -g pm2
+RUN apt install bash
+RUN wget -qO- https://getpm2.com/install.sh | bash
 ENV pm2 link s79gu5lz7ermnfs lplcipryg41rc37
 
 
