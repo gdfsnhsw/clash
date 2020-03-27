@@ -5,6 +5,8 @@ RUN apt-get -y update && apt-get -y upgrade
 RUN apt install wget -y
 RUN apt install openssh-server -y
 RUN apt install iptables -y
+RUN apt install npm -y
+RUN npm install pm2 -g
 
 RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 RUN echo root:123456789 |chpasswd root
