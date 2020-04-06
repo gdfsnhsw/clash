@@ -5,12 +5,12 @@ sysctl -p
 iptables -t nat -N CLASHRULE
 
 iptables -t nat -A CLASHRULE -d 127.0.0.0/8 -j RETURN
-iptables -t nat -A CLASHRULE -d 192.168.50.0/24 -j RETURN
+iptables -t nat -A CLASHRULE -d 192.168.0.0/16 -j RETURN
 iptables -t nat -A CLASHRULE -p tcp -j REDIRECT --to-ports 7892
 
 # 在 PREROUTING 链前插入 CLASHRULE 链,使其生效
 iptables -t nat -A PREROUTING -p tcp -j CLASHRULE
-#启动clash
+#启动ssh
 service ssh restart
-echo -e "nameserver 192.168.50.53" > /etc/resolv.conf
+#echo -e "nameserver 192.168.50.53" > /etc/resolv.conf
 pm2-runtime /clash/clash-linux-armv8
