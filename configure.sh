@@ -13,4 +13,6 @@ iptables -t nat -A PREROUTING -p tcp -j CLASHRULE
 #启动ssh
 service ssh restart
 #echo -e "nameserver 192.168.50.53" > /etc/resolv.conf
-pm2-runtime /clash/clash-linux-armv8
+#pm2-runtime /clash/clash-linux-armv8
+ip addr
+/clash/clash-linux-armv8
