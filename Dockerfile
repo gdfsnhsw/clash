@@ -21,6 +21,7 @@ RUN chmod +x clash/clash-linux-armv8
 
 ADD AdGuardHome Ad/AdGuardHome
 RUN chmod +x Ad/AdGuardHome
+ADD AdGuardHome.yaml Ad/AdGuardHome.yaml
 VOLUME /root/.config/clash
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
