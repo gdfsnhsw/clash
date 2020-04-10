@@ -1,6 +1,7 @@
 # debianarmv8
 
 clash+DHCP+AdGuard Home
+
 开启混杂模式
 
 ip link set eth0 promisc on
