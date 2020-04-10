@@ -19,6 +19,8 @@ RUN wget -P /root/.config/clash https://github.com/Dreamacro/maxmind-geoip/relea
 ADD clash-linux-armv8 clash/clash-linux-armv8
 RUN chmod +x clash/clash-linux-armv8
 
+ADD AdGuardHome Ad/AdGuardHome
+RUN chmod +x Ad/AdGuardHome
 VOLUME /root/.config/clash
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
