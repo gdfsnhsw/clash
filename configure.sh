@@ -15,7 +15,7 @@ service ssh restart
 #echo -e "nameserver 192.168.50.53" > /etc/resolv.conf
 #pm2-runtime /clash/clash-linux-armv8
 ip addr
-nohup Ad/AdGuardHome >AdGuardHome.txt 2>&1 &
+nohup /Ad/AdGuardHome >AdGuardHome.txt 2>&1 &
 /clash/clash-linux-armv8
 
 
