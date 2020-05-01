@@ -15,6 +15,10 @@ iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 55
 service ssh restart
 #echo -e "nameserver 192.168.50.53" > /etc/resolv.conf
 #pm2-runtime /clash/clash-linux-armv8
+cd /root/.config/clash
+wget https://github.com/haishanh/yacd/archive/gh-pages.zip
+unzip gh-pages.zip
+mv yacd-gh-pages/ dashboard/
 ip addr
 nohup /Ad/AdGuardHome >AdGuardHome.txt 2>&1 &
 /clash/clash-linux-armv8
