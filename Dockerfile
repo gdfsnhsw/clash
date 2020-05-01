@@ -20,10 +20,6 @@ RUN echo root:123456789 |chpasswd root
 RUN wget -P /root/.config/clash https://cdn.jsdelivr.net/gh/byxiaopeng/imgtu/pz/config.yaml
 ADD clash-linux-armv8 clash/clash-linux-armv8
 RUN chmod +x clash/clash-linux-armv8
-RUN cd /root/.config/clash
-RUN wget https://github.com/haishanh/yacd/archive/gh-pages.zip
-RUN unzip gh-pages.zip
-RUN mv yacd-gh-pages/ dashboard/
 
 ADD AdGuardHome Ad/AdGuardHome
 RUN chmod +x Ad/AdGuardHome
