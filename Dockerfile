@@ -7,6 +7,7 @@ RUN apt install openssh-server -y
 RUN apt install iptables -y
 RUN apt install dhcpcd5 -y
 RUN apt install curl -y
+RUN apt install unzip -y
 #RUN apt install npm -y
 #RUN npm install pm2 -g
 #ENV PM2_PUBLIC_KEY lplcipryg41rc37
