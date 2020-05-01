@@ -8,8 +8,8 @@ iptables -t nat -A CLASHRULE -d 192.168.0.0/16 -j RETURN
 iptables -t nat -A CLASHRULE -p tcp -j REDIRECT --to-ports 7892
 iptables -t nat -A PREROUTING -p tcp -j CLASHRULE
 
-iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 55
-iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 55
+iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 53
+iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 53
 
 #启动ssh
 service ssh restart
