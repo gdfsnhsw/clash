@@ -13,7 +13,6 @@ iptables -t nat -A PREROUTING -p tcp -j CLASHRULE
 service ssh restart
 #pm2-runtime /clash/clash-linux-armv8
 ip addr
-#nohup /Ad/AdGuardHome >AdGuardHome.txt 2>&1 &
 /clash/clash-linux-armv8
 
 
