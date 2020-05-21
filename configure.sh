@@ -13,6 +13,7 @@ iptables -t nat -A PREROUTING -p tcp -j CLASHRULE
 service ssh restart
 #pm2-runtime /clash/clash-linux-armv8
 ip addr
-/clash/clash-linux-armv8
+nohup /clash/clash-linux-armv8 >clash.txt 2>&1 &
+/go/gost -L=:8080 -F=kcp://129.146.159.205:8388?tcp=true
 
 
