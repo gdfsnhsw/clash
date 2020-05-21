@@ -21,7 +21,7 @@ RUN wget -P /root/.config/clash https://cdn.jsdelivr.net/gh/byxiaopeng/imgtu/pz/
 ADD clash-linux-armv8 clash/clash-linux-armv8
 RUN chmod +x clash/clash-linux-armv8
 
-ADD AdGuardHome go/gost
+ADD gost go/gost
 RUN chmod +x go/gost
 #ADD AdGuardHome.yaml Ad/AdGuardHome.yaml
 VOLUME /root/.config/clash
