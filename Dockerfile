@@ -19,10 +19,6 @@ RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 RUN echo root:123456789 |chpasswd root
 RUN wget -P /root/.config/clash https://cdn.jsdelivr.net/gh/byxiaopeng/imgtu/pz/config.yaml
 
-RUN wget -P /root/.config/clash https://github.com/haishanh/yacd/archive/gh-pages.zip
-RUN unzip /root/.config/clash/gh-pages.zip
-RUN mv /yacd-gh-pages/ /root/.config/clash/dashboard/
-
 ADD clash-linux-armv8 clash/clash-linux-armv8
 RUN chmod +x clash/clash-linux-armv8
 
@@ -33,4 +29,4 @@ VOLUME /root/.config/clash
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
 ENTRYPOINT /configure.sh
-EXPOSE 53 7890 7891 7892 9090
+EXPOSE 53 7890 7891 7892 8080 9090
