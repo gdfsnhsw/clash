@@ -21,7 +21,7 @@ RUN wget -P /root/.config/clash https://cdn.jsdelivr.net/gh/byxiaopeng/imgtu/pz/
 
 RUN wget -P /root/.config/clash https://github.com/haishanh/yacd/archive/gh-pages.zip
 RUN unzip /root/.config/clash/gh-pages.zip
-RUN mv /root/.config/clash/yacd-gh-pages/ /root/.config/clash/dashboard/
+RUN mv /root/yacd-gh-pages/ /root/.config/clash/dashboard/
 
 ADD clash-linux-armv8 clash/clash-linux-armv8
 RUN chmod +x clash/clash-linux-armv8
