@@ -22,8 +22,7 @@ RUN wget -P /root/.config/clash https://cdn.jsdelivr.net/gh/byxiaopeng/imgtu/pz/
 ADD clash-linux-armv8 clash/clash-linux-armv8
 RUN chmod +x clash/clash-linux-armv8
 
-ADD gost go/gost
-RUN chmod +x go/gost
+
 
 VOLUME /root/.config/clash
 ADD configure.sh /configure.sh
