@@ -19,8 +19,8 @@ RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 RUN echo root:123456789 |chpasswd root
 RUN wget -P /root/.config/clash https://cdn.jsdelivr.net/gh/byxiaopeng/imgtu/pz/config.yaml
 
-ADD clash-linux-armv8 clash/clash-linux-armv8
-RUN chmod +x clash/clash-linux-armv8
+ADD clash-linux-armv8 clash/clash
+RUN chmod +x clash/clash
 
 
 
