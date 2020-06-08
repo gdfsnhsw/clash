@@ -1,6 +1,6 @@
 # debianarmv8
 
-clash+DHCP+AdGuard Home
+clash
 
 开启混杂模式
 
