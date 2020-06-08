@@ -13,12 +13,6 @@ iptables -t nat -A PREROUTING -p tcp -j CLASHRULE
 service ssh restart
 #pm2-runtime /clash/clash-linux-armv8
 ip addr
-nohup /clash/clash >clash.txt 2>&1 &
-mkdir /tmp/gost
-cd /tmp/gost
-wget https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-armv8-2.11.1.gz
-gunzip gost-linux-armv8-2.11.1.gz
-chmod +x /tmp/gost/gost-linux-armv8-2.11.1
-/tmp/gost/gost-linux-armv8-2.11.1 -L=:8080 -F=kcp://34.80.196.0:8388?tcp=true
+/clash/clash
 
 
