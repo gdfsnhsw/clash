@@ -18,8 +18,10 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 RUN echo root:123456789 |chpasswd root
 
-ADD clash-linux-armv8 clash/clash
-RUN chmod +x clash/clash
+RUN wget  -P /usr/bin https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-armv8-2020.05.08.gz
+RUN gunzip /usr/bin/clash-linux-armv8-2020.05.08.gz
+RUN mv /usr/bin/clash-linux-armv8-2020.05.08 /usr/bin/clash
+RUN chmod +x /usr/bin/clash
 
 
 
