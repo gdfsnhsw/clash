@@ -11,8 +11,8 @@ iptables -t nat -A CLASHRULE -p tcp -j REDIRECT --to-ports 7892
 iptables -t nat -A PREROUTING -p tcp -j CLASHRULE
 #启动ssh
 service ssh restart
-#pm2-runtime /clash/clash-linux-armv8
+#pm2-runtime clash
 ip addr
-/clash/clash
+clash
 
 
