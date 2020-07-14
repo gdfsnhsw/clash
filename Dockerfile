@@ -6,7 +6,7 @@ RUN apt install wget -y
 RUN apt install openssh-server -y
 RUN apt install iptables -y
 #RUN apt install dhcpcd5 -y
-RUN apt install curl -y
+#RUN apt install curl -y
 RUN apt install unzip -y
 #RUN apt install npm -y
 #RUN npm install pm2 -g
@@ -27,9 +27,8 @@ RUN mv /usr/bin/clash-linux-armv8-v1.0.0 /usr/bin/clash
 #RUN mv /usr/bin/clash-linux-armv8-2020.06.27 /usr/bin/clash
 RUN chmod +x /usr/bin/clash
 
-
-
 VOLUME /root/.config/clash
+
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
 ENTRYPOINT /configure.sh
