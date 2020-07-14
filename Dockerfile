@@ -5,7 +5,7 @@ RUN apt-get -y update && apt-get -y upgrade
 RUN apt install wget -y
 RUN apt install openssh-server -y
 RUN apt install iptables -y
-RUN apt install dhcpcd5 -y
+#RUN apt install dhcpcd5 -y
 RUN apt install curl -y
 RUN apt install unzip -y
 #RUN apt install npm -y
