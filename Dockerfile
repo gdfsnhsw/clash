@@ -6,7 +6,7 @@ RUN apt install wget -y
 RUN apt install openssh-server -y
 RUN apt install iptables -y
 #RUN apt install dhcpcd5 -y
-#RUN apt install curl -y
+RUN apt install curl -y
 RUN apt install unzip -y
 #RUN apt install npm -y
 #RUN npm install pm2 -g
@@ -32,4 +32,4 @@ VOLUME /root/.config/clash
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
 ENTRYPOINT /configure.sh
-EXPOSE 53 7890 7891 7892 8080 9090
+EXPOSE 53 7890 7891 7892 9090
