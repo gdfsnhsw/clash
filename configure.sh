@@ -2,7 +2,14 @@
 # 开启转发
 sed -i "s/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g" /etc/sysctl.conf
 sysctl -p
-
+#重置iptables
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -t nat -F
+iptables -t mangle -F
+iptables -F
+iptables -X
 #iptables -t nat -N CLASHRULE
 #iptables -t nat -A CLASHRULE -d 127.0.0.0/8 -j RETURN
 #iptables -t nat -A CLASHRULE -d 192.168.0.0/16 -j RETURN
