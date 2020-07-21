@@ -42,7 +42,7 @@ iptables -t mangle -A clash -p udp -j TPROXY --on-port 7892 --tproxy-mark 1
 iptables -t mangle -A PREROUTING -p udp -j clash
 
 #启动ssh
-service ssh restart
+#service ssh restart
 #pm2-runtime clash
 ip addr
 clash
