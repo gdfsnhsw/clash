@@ -25,8 +25,8 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo "Asia/Shanghai" > /etc/timezone
 RUN apk del tzdata
 
-RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
-RUN echo root:123456789 |chpasswd root
+#RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
+#RUN echo root:123456789 |chpasswd root
 
 RUN wget  -P /usr/bin https://github.com/Dreamacro/clash/releases/download/v1.0.0/clash-linux-armv8-v1.0.0.gz
 RUN gunzip /usr/bin/clash-linux-armv8-v1.0.0.gz
