@@ -44,7 +44,7 @@ iptables -t mangle -A PREROUTING -p udp -j clash
 #service ssh restart
 #pm2-runtime clash
 ip addr
-nohup gost -L=:1080 -F=socks5+wss://console-openshift-console.apps.us-east-2.starter.openshift-online.com:443 >wss.txt 2>&1 &
+nohup gost -L=:1080 -F=socks5+ws://gostws-gostws.apps.us-east-2.starter.openshift-online.com:80 >wss.txt 2>&1 &
 clash
 
 
