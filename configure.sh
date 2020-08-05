@@ -44,7 +44,7 @@ iptables -t mangle -A PREROUTING -p udp -j clash
 #service ssh restart
 #pm2-runtime clash
 ip addr
-nohup gost -L=:1080 -F=ss+ws://gostws-ws13s.apps.us-east-2.starter.openshift-online.com:80 >wss.txt 2>&1 &
+nohup gost -L=:1080 -F=ss+wss://AEAD_CHACHA20_POLY1305:peng@gostws-ws13s.apps.us-east-2.starter.openshift-online.com:80 >wss.txt 2>&1 &
 clash
 
 
