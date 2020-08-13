@@ -1,7 +1,7 @@
 name: pushdocker
 on:
-  schedule:
-    - cron: 35 21 * * 4
+  #schedule:
+  #  - cron: 35 21 * * 4
   watch:
     types: started
 jobs:
