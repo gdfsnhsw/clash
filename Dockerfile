@@ -37,15 +37,15 @@ RUN gunzip /usr/bin/clash-linux-armv8-2020.06.27.gz
 RUN mv /usr/bin/clash-linux-armv8-2020.06.27 /usr/bin/clash
 RUN chmod +x /usr/bin/clash
 
-RUN mkdir /etc/gost
-RUN wget -P /etc/gost https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-armv8-2.11.1.gz
-RUN gunzip /etc/gost/gost-linux-armv8-2.11.1.gz
-RUN chmod +x /etc/gost/gost-linux-armv8-2.11.1
-RUN mv /etc/gost/gost-linux-armv8-2.11.1 /usr/bin/gost
+#RUN mkdir /etc/gost
+#RUN wget -P /etc/gost https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-armv8-2.11.1.gz
+#RUN gunzip /etc/gost/gost-linux-armv8-2.11.1.gz
+#RUN chmod +x /etc/gost/gost-linux-armv8-2.11.1
+#RUN mv /etc/gost/gost-linux-armv8-2.11.1 /usr/bin/gost
 
 VOLUME /root/.config/clash
 
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
 ENTRYPOINT /configure.sh
-EXPOSE 53 1080 7890 7891 7892 9090
+EXPOSE 53 7890 7891 7892 9090
