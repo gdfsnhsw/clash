@@ -9,16 +9,7 @@ ENV VER=2020.08.16
 #更新源
 #RUN apt-get -y update && apt-get -y upgrade
 #安装ssh
-#RUN apt install wget -y
-#RUN apt install openssh-server -y
-#RUN apt install iptables -y
-#RUN apt install dhcpcd5 -y
-#RUN apt install curl -y
-#RUN apt install unzip -y
-#RUN apt install npm -y
-#RUN npm install pm2 -g
-#ENV PM2_PUBLIC_KEY lplcipryg41rc37
-#ENV PM2_SECRET_KEY s79gu5lz7ermnfs
+#RUN apt install -y wget openssh-server iptables curl unzip
 #同步系统时间
 RUN apk add tzdata
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
@@ -36,12 +27,6 @@ RUN wget  -P /usr/bin https://github.com/Dreamacro/clash/releases/download/premi
 RUN gunzip /usr/bin/clash-linux-armv8-$VER.gz
 RUN mv /usr/bin/clash-linux-armv8-$VER /usr/bin/clash
 RUN chmod +x /usr/bin/clash
-
-#RUN mkdir /etc/gost
-#RUN wget -P /etc/gost https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-armv8-2.11.1.gz
-#RUN gunzip /etc/gost/gost-linux-armv8-2.11.1.gz
-#RUN chmod +x /etc/gost/gost-linux-armv8-2.11.1
-#RUN mv /etc/gost/gost-linux-armv8-2.11.1 /usr/bin/gost
 
 VOLUME /root/.config/clash
 
