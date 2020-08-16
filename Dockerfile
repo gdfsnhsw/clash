@@ -3,7 +3,7 @@ FROM arm64v8/alpine
 RUN apk update
 
 RUN apk add --no-cache --virtual .build-deps ca-certificates curl iptables bash-completion bash unzip
-
+ENV VER=2020.08.16
 
 #FROM arm64v8/debian
 #更新源
@@ -32,9 +32,9 @@ RUN apk del tzdata
 #RUN gunzip /usr/bin/clash-linux-armv8-v1.0.0.gz
 #RUN mv /usr/bin/clash-linux-armv8-v1.0.0 /usr/bin/clash
 
-RUN wget  -P /usr/bin https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-armv8-2020.06.27.gz
-RUN gunzip /usr/bin/clash-linux-armv8-2020.06.27.gz
-RUN mv /usr/bin/clash-linux-armv8-2020.06.27 /usr/bin/clash
+RUN wget  -P /usr/bin https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-armv8-$VER.gz
+RUN gunzip /usr/bin/clash-linux-armv8-$VER.gz
+RUN mv /usr/bin/clash-linux-armv8-$VER /usr/bin/clash
 RUN chmod +x /usr/bin/clash
 
 #RUN mkdir /etc/gost
