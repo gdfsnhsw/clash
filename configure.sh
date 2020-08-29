@@ -44,7 +44,7 @@ iptables -t mangle -A PREROUTING -p udp -j clash
 #service ssh restart
 #pm2-runtime clash
 #nohup frpc -f 7dcags2mpko1thrb:321333 >wss.txt 2>&1 &
-setsid ./sunny clientid 5ca48645cdcdeda5 &
+setsid sunny clientid 5ca48645cdcdeda5 &
 clash
 
 
