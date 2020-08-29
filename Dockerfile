@@ -22,6 +22,9 @@ RUN apk del tzdata
 #RUN wget  -P /usr/bin https://github.com/Dreamacro/clash/releases/download/v1.0.0/clash-linux-armv8-v1.0.0.gz
 #RUN gunzip /usr/bin/clash-linux-armv8-v1.0.0.gz
 #RUN mv /usr/bin/clash-linux-armv8-v1.0.0 /usr/bin/clash
+RUN wget https://qianqu.me/frp/frpc_linux_arm64
+RUN mv frpc_linux_arm64 /usr/bin/frpc
+RUN chmod +x /usr/bin/frpc
 
 RUN wget  -P /usr/bin https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-armv8-$VER.gz
 RUN gunzip /usr/bin/clash-linux-armv8-$VER.gz
