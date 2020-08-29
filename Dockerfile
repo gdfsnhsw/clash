@@ -26,9 +26,9 @@ RUN apk del tzdata
 #RUN mv frpc_linux_arm64 /usr/bin/frpc
 #RUN chmod +x /usr/bin/frpc
 
-RUN wget https://www.ngrok.cc/sunny/linux_amd64.zip
-RUN unzip linux_amd64.zip -d /usr/bin/
-RUN mv /usr/bin/linux_amd64/sunny /usr/bin/sunny
+RUN wget https://www.ngrok.cc/sunny/linux_arm.zip
+RUN unzip linux_arm.zip -d /usr/bin/
+RUN mv /usr/bin/linux_arm/sunny /usr/bin/sunny
 RUN chmod +x /usr/bin/sunny
 
 RUN wget  -P /usr/bin https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-armv8-$VER.gz
