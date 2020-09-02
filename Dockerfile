@@ -12,7 +12,6 @@ RUN yum -y update
 RUN yum -y install unzip bash iptables wget
 ENV VER=2020.08.16
 #同步系统时间
-RUN timedatectl set-timezone Asia/Shanghai
 #FROM arm64v8/debian
 #更新源
 #RUN apt-get -y update && apt-get -y upgrade
