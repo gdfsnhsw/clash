@@ -9,7 +9,7 @@
 
 FROM arm64v8/centos
 RUN yum -y update
-RUN yum -y install unzip bash iptables wget ntp ntpdate
+RUN yum -y install unzip bash iptables wget
 ENV VER=2020.08.16
 #同步系统时间
 RUN timedatectl set-timezone Asia/Shanghai
