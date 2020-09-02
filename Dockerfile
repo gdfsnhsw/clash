@@ -9,10 +9,10 @@
 
 FROM arm64v8/centos
 RUN yum -y update
-RUN yum -y install unzip bash iptables wget
+RUN yum -y install unzip bash iptables wget ntp ntpdate
 ENV VER=2020.08.16
 #同步系统时间
-#RUN ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 #FROM arm64v8/debian
 #更新源
 #RUN apt-get -y update && apt-get -y upgrade
