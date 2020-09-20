@@ -1,17 +1,3 @@
-#FROM arm64v8/alpine
-#RUN apk update
-#RUN apk add --no-cache --virtual .build-deps ca-certificates curl iptables bash-completion bash unzip
-#ENV VER=2020.08.16
-#RUN apk add tzdata
-#RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-#RUN echo "Asia/Shanghai" > /etc/timezone
-#RUN apk del tzdata
-
-#FROM arm64v8/centos
-#RUN yum -y update
-#RUN yum -y install unzip bash iptables wget
-#ENV VER=2020.08.16
-
 FROM arm64v8/debian
 #更新源
 RUN apt-get -y update && apt-get -y upgrade
@@ -19,7 +5,7 @@ RUN apt-get -y update && apt-get -y upgrade
 RUN apt install -y wget openssh-server iptables curl unzip
 ENV VER=2020.08.16
 #同步系统时间
-
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 RUN echo root:123456789 |chpasswd root
