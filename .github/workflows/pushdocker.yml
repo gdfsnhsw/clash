@@ -1,9 +1,8 @@
 name: pushdocker
 on:
-  #schedule:
-  #  - cron: 35 21 * * 4
-  watch:
-    types: started
+  push:
+    branches:    
+      - master
 jobs:
   build:
       runs-on: ubuntu-latest
