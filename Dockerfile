@@ -3,7 +3,7 @@ FROM arm64v8/debian
 RUN apt-get -y update && apt-get -y upgrade
 #安装ssh
 RUN apt install -y wget openssh-server iptables curl unzip
-ENV VER=2020.10.08
+ENV VER=2020.10.09
 #同步系统时间
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
