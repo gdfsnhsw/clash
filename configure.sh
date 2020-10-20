@@ -44,5 +44,3 @@ iptables -t mangle -A PREROUTING -p udp -j clash
 service ssh restart
 #pm2-runtime clash
 clash
-
-
