@@ -17,7 +17,7 @@ RUN chmod +x /usr/bin/clash
 
 VOLUME /root/.config/clash
 
-ADD configure.sh /configure.sh
-RUN chmod +x /configure.sh
-ENTRYPOINT /configure.sh
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT /entrypoint.sh
 EXPOSE 53 7890 7891 7892 9090
