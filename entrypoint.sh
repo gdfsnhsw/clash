@@ -40,6 +40,9 @@ iptables -t mangle -A clash -d 224.0.0.0/4 -j RETURN
 iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
 iptables -t mangle -A clash -p udp -j TPROXY --on-port 7892 --tproxy-mark 1
 iptables -t mangle -A PREROUTING -p udp -j clash
+#由于国内dns会解析github到无法访问ip  添加hosts
+echo '192.30.255.113 github.com' >> /etc/hosts 
+
 #启动ssh
 service ssh restart
 #pm2-runtime clash
