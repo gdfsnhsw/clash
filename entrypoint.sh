@@ -21,9 +21,7 @@ iptables -t nat -A clash -d 172.16.0.0/12 -j RETURN
 iptables -t nat -A clash -d 192.168.0.0/16 -j RETURN
 iptables -t nat -A clash -d 224.0.0.0/4 -j RETURN
 iptables -t nat -A clash -d 240.0.0.0/4 -j RETURN
-iptables -t nat -A clash -p tcp -j REDIRECT --to-port 7892
-iptables -t nat -I PREROUTING -p tcp -d 8.8.8.8 -j REDIRECT --to-port 7892
-iptables -t nat -I PREROUTING -p tcp -d 8.8.4.4 -j REDIRECT --to-port 7892
+iptables -t nat -A clash -p tcp -j REDIRECT --to-port 7893
 iptables -t nat -A PREROUTING -p tcp -j clash
 
 #udp
@@ -38,7 +36,7 @@ iptables -t mangle -A clash -d 172.16.0.0/12 -j RETURN
 iptables -t mangle -A clash -d 192.168.0.0/16 -j RETURN
 iptables -t mangle -A clash -d 224.0.0.0/4 -j RETURN
 iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
-iptables -t mangle -A clash -p udp -j TPROXY --on-port 7892 --tproxy-mark 1
+iptables -t mangle -A clash -p udp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A PREROUTING -p udp -j clash
 #由于国内dns会解析github到无法访问ip  添加hosts
 echo '192.30.255.113 github.com' >> /etc/hosts 
