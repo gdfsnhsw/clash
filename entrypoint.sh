@@ -11,7 +11,7 @@ iptables -t mangle -F
 iptables -F
 iptables -X
 
-#udp
+#tcp-udp
 ip rule add fwmark 1 table 100
 ip route add local default dev lo table 100
 iptables -t mangle -N clash
@@ -27,7 +27,7 @@ iptables -t mangle -A clash -p tcp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A clash -p udp -j TPROXY --on-port 7893 --tproxy-mark 1
 
 iptables -t mangle -A PREROUTING -j clash
-#由于国内dns会解析github到无法访问ip  添加hosts
-echo '192.30.255.113 github.com' >> /etc/hosts 
+#启动SSH
+/usr/sbin/sshd
 #启动 clash
 clash
