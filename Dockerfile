@@ -16,9 +16,16 @@ RUN gunzip /usr/bin/clash-linux-armv8-$VER.gz
 RUN mv /usr/bin/clash-linux-armv8-$VER /usr/bin/clash
 RUN chmod +x /usr/bin/clash
 
+RUN wget https://github.com/AdguardTeam/AdGuardHome/releases/latest/download/AdGuardHome_linux_arm64.tar.gz
+RUN tar  -zxvf AdGuardHome_linux_arm64.tar.gz
+RUN rm -r AdGuardHome_linux_arm64.tar.gz
+RUN mv /AdGuardHome/AdGuardHome /usr/bin/AdGuardHome
+RUN chmod +x /usr/bin/AdGuardHome
+
 VOLUME /root/.config/clash
+VOLUME /AdGuardHome
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT /entrypoint.sh
-EXPOSE 22 53 7890 7891 7892 7893 9090
+EXPOSE 22 53 80 7890 7891 7892 7893 9090
