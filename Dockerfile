@@ -2,7 +2,7 @@ FROM alpine
 RUN apk update	
 RUN apk upgrade
 RUN apk add --no-cache ca-certificates curl git iptables bash-completion bash unzip	openssh tzdata
-ENV VER=2020.11.20
+ENV VER=2020.12.21
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo "Asia/Shanghai" > /etc/timezone
 #SSH
