@@ -27,6 +27,7 @@ iptables -t mangle -A clash -p tcp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A clash -p udp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A PREROUTING -j clash
 #启动SSH
-/usr/sbin/sshd
+#/usr/sbin/sshd
+/etc/init.d/ssh start
 #启动 clash
 clash
