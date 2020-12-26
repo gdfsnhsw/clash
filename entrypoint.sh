@@ -10,7 +10,7 @@ iptables -t nat -F
 iptables -t mangle -F
 iptables -F
 iptables -X
-
+iptables -t nat -I PREROUTING -p tcp -d 8.8.8.8 -j REDIRECT --to-port 7893
 #tcp-udp
 ip rule add fwmark 1 table 100
 ip route add local default dev lo table 100
