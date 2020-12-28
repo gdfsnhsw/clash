@@ -2,7 +2,7 @@ FROM debian
 #更新源
 RUN apt-get -y update && apt-get -y upgrade
 RUN apt -y install wget openssh-server iptables
-ENV VER=2020.12.21
+ENV VER=2020.12.27
 #同步系统时间
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
