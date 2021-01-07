@@ -26,6 +26,14 @@ iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
 iptables -t mangle -A clash -p tcp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A clash -p udp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A PREROUTING -j clash
+
+wget -P /tmp https://cdn.jsdelivr.net/gh/Hackl0us/GeoIP2-CN@release/Country.mmdb
+
+if [ ! -e '/tmp/Country.mmdb' ]; then
+    echo "init /tmp/Country.mmdb"
+    cp  /root/.config/clash/Country.mmdb /tmp/Country.mmdb
+fi
+
 #启动SSH
 #/usr/sbin/sshd
 /etc/init.d/ssh start
