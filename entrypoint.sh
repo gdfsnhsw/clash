@@ -27,9 +27,9 @@ iptables -t mangle -A clash -p tcp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A clash -p udp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A PREROUTING -j clash
 
-if [ ! -e '/tmp/Country.mmdb' ]; then
-    echo "init /tmp/Country.mmdb"
-    cp  /root/.config/clash/Country.mmdb /tmp/Country.mmdb
+if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
+    echo "init /root/.config/clash/Country.mmdb"
+    cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
 fi
 
 #启动SSH
