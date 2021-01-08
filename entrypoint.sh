@@ -26,8 +26,6 @@ iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
 iptables -t mangle -A clash -p tcp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A clash -p udp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A PREROUTING -j clash
-echo '151.101.108.133 raw.githubusercontent.com' >> /etc/hosts 
-wget -P /tmp https://raw.githubusercontent.com/Hackl0us/GeoIP2-CN/release/Country.mmdb
 
 if [ ! -e '/tmp/Country.mmdb' ]; then
     echo "init /tmp/Country.mmdb"
