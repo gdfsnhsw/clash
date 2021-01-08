@@ -14,6 +14,7 @@ RUN gunzip /usr/bin/clash-linux-armv8-$VER.gz
 RUN mv /usr/bin/clash-linux-armv8-$VER /usr/bin/clash
 RUN chmod +x /usr/bin/clash
 
+RUN wget -P /tmp https://raw.githubusercontent.com/Hackl0us/GeoIP2-CN/release/Country.mmdb
 VOLUME /root/.config/clash
 
 ADD entrypoint.sh /entrypoint.sh
