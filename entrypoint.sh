@@ -29,11 +29,11 @@ iptables -t mangle -A PREROUTING -j clash
 
 if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
     echo "init /root/.config/clash/Country.mmdb"
-    cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
+    cp /tmp/Country.mmdb /root/.config/clashsmartdns.conf/Country.mmdb
 fi
-
+#启动DNS服务器
+smartdns -c /root/.config/clash/smartdns.conf
 #启动SSH
-#/usr/sbin/sshd
 /etc/init.d/ssh start
 #启动 clash
 clash
