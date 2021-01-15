@@ -15,6 +15,11 @@ RUN mv /usr/bin/clash-linux-armv8-$VER /usr/bin/clash
 RUN chmod +x /usr/bin/clash
 
 RUN wget -P /tmp https://raw.githubusercontent.com/Hackl0us/GeoIP2-CN/release/Country.mmdb
+
+RUN wget https://github.com/pymumu/smartdns/releases/download/Release33/smartdns-aarch64
+RUN chmod +x /smartdns-aarch64
+RUN mv /smartdns-aarch64 /usr/bin/smartdns
+
 VOLUME /root/.config/clash
 
 ADD entrypoint.sh /entrypoint.sh
