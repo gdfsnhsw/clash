@@ -32,7 +32,7 @@ if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
     cp /tmp/Country.mmdb /root/.config/clashsmartdns.conf/Country.mmdb
 fi
 #启动DNS服务器
-smartdns -c /root/.config/clash/smartdns.conf
+#smartdns -c /root/.config/clash/smartdns.conf
 #启动SSH
 /etc/init.d/ssh start
 #启动 clash
