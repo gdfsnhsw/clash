@@ -2,7 +2,7 @@ FROM debian
 #更新源
 RUN apt-get -y update && apt-get -y upgrade
 RUN apt -y install wget openssh-server iptables ipset
-ENV VER=2021.02.19
+ENV VER=2021.02.21
 #同步系统时间
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
