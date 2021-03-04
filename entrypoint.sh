@@ -28,11 +28,11 @@ iptables -t mangle -A clash -p udp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A PREROUTING -j clash
 
 if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
-    echo "init /root/.config/clash/Country.mmdb"
-    cp /tmp/Country.mmdb /root/.config/clashsmartdns.conf/Country.mmdb
+    echo "已找到早期版本Country.mmdb执行删除"
+    rm -r /root/.config/clash/Country.mmdb
+    echo "替换镜像的新版Country.mmdb"
+    cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
 fi
-#启动DNS服务器
-#smartdns -c /root/.config/clash/smartdns.conf
 #启动SSH
 /etc/init.d/ssh start
 #启动 clash
