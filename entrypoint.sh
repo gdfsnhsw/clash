@@ -28,7 +28,7 @@ iptables -t mangle -A clash -p udp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A PREROUTING -j clash
 if [ ! -e '/root/.config/clash/dashboard/index.html' ]; then
     echo "开始移动面板文件到dashboard目录"
-    tar -zxvf yacd.tar.xz
+    tar -xvf yacd.tar.xz
     mkdir -p /root/.config/clash/dashboard
     mv /public/* /root/.config/clash/dashboard
 fi
