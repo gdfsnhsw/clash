@@ -1,7 +1,7 @@
 FROM debian
 #更新源
 RUN apt-get -y update && apt-get -y upgrade
-RUN apt -y install wget iptables ipset
+RUN apt -y install wget iptables ipset xz-utils
 ENV VER=2021.02.21
 #同步系统时间
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
