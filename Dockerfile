@@ -13,7 +13,7 @@ RUN mv /usr/bin/clash-linux-armv8-$VER /usr/bin/clash
 RUN chmod +x /usr/bin/clash
 RUN wget -P /tmp https://raw.githubusercontent.com/Hackl0us/GeoIP2-CN/release/Country.mmdb
 RUN wget https://github.com/haishanh/yacd/releases/download/v0.2.15/yacd.tar.xz
-RUN tar xvJf yacd.tar.xz
+RUN tar xvJf ./yacd.tar.xz
 RUN mkdir -p /root/.config/clash/dashboard
 VOLUME /root/.config/clash
 ADD entrypoint.sh /entrypoint.sh
