@@ -30,6 +30,7 @@ if [ ! -e '/root/.config/clash/dashboard/index.html' ]; then
     echo "删除旧版本dashboard面板"
     rm -rf /root/.config/clash/dashboard
     echo "开始移动面板文件到dashboard目录"
+    mkdir -p /root/.config/clash/dashboard
     mv public/* /root/.config/clash/dashboard
 fi
 
