@@ -26,6 +26,12 @@ iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
 iptables -t mangle -A clash -p tcp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A clash -p udp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A PREROUTING -j clash
+if [ ! -e '/root/.config/clash/dashboard/index.html' ]; then
+    echo "删除旧版本dashboard面板"
+    rm -rf /root/.config/clash/dashboard
+    echo "开始移动面板文件到dashboard目录"
+    mv public/* /root/.config/clash/dashboard
+fi
 
 if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
     echo "已找到早期版本Country.mmdb执行删除"
@@ -33,6 +39,7 @@ if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
     echo "替换镜像的新版Country.mmdb"
     cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
 fi
+
 #启动SSH
 /etc/init.d/ssh start
 #启动 clash
