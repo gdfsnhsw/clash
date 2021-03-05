@@ -41,8 +41,5 @@ if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
     echo "替换镜像的新版Country.mmdb"
     cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
 fi
-
-#启动SSH
-/etc/init.d/ssh start
 #启动 clash
 clash
