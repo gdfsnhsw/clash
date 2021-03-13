@@ -1,5 +1,5 @@
 FROM alpine
-ENV VER=2021.02.21
+ENV VER=2021.03.10
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN set -ex \
         && apk update && apk upgrade \
