@@ -3,16 +3,10 @@ ENV VER=2021.03.10
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN set -ex \
         && apk update && apk upgrade \
-        && apk add ca-certificates tzdata wget bash iptables  \
+        && apk add ca-certificates tzdata wget bash iptables nodejs npm  \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-        && echo "Asia/Shanghai" > /etc/timezone
-#FROM debian
-#更新源
-#RUN apt-get -y update && apt-get -y upgrade
-#RUN apt -y install wget iptables ipset xz-utils
-#ENV VER=2021.02.21
-#同步系统时间
-#RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+        && echo "Asia/Shanghai" > /etc/timezone \
+        && npm install -g pm2
 RUN wget -P /usr/bin https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-armv8-$VER.gz
 RUN gunzip /usr/bin/clash-linux-armv8-$VER.gz
 RUN mv /usr/bin/clash-linux-armv8-$VER /usr/bin/clash
