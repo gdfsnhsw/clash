@@ -49,4 +49,5 @@ if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
     cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
 fi
 #启动 clash
-clash
+pm2 start clash
+tail -f /dev/null
