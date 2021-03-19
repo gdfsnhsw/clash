@@ -10,8 +10,8 @@ RUN set -ex \
 RUN if [ $(arch) == x86_64 ]; then     linux=linux-amd64; fi
 RUN if [ $(arch) == aarch64 ]; then     linux=linux-armv8; fi
 RUN wget -P /usr/bin https://github.com/Dreamacro/clash/releases/download/premium/clash-$linux-$VER.gz
-RUN gunzip /usr/bin/clash-linux-armv8-$VER.gz
-RUN mv /usr/bin/clash-linux-armv8-$VER /usr/bin/clash
+RUN gunzip /usr/bin/clash-$linux-$VER.gz
+RUN mv /usr/bin/clash-$linux-$VER /usr/bin/clash
 RUN chmod +x /usr/bin/clash
 RUN wget -P /tmp https://raw.githubusercontent.com/Hackl0us/GeoIP2-CN/release/Country.mmdb
 RUN wget https://github.com/haishanh/yacd/releases/download/v0.2.15/yacd.tar.xz
