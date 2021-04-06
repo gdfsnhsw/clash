@@ -1,4 +1,9 @@
 #!/bin/bash
+
+echo "安装nodejs npm"
+apk add nodejs npm
+echo "安装pm2监控"
+npm install -g pm2
 # 开启转发
 sed -i "s/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g" /etc/sysctl.conf
 sysctl -p
@@ -45,9 +50,9 @@ if [ ! -e '/root/.config/clash/dashboard/index.html' ]; then
 fi
 
 if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
-    echo "替换镜像的新版Country.mmdb"
+    echo "移动Country.mmdb文件"
     cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
 fi
-#启动 clash
-clash
+echo "使用pm2启动clash进程" 
+pm2 start clash
 tail -f /dev/null
