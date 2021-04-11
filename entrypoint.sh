@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo "安装nodejs npm"
-apk add nodejs npm
+echo "安装yarn"
+apk add yarn
 echo "安装pm2监控"
-npm install -g pm2
+yarn global add pm2
 # 开启转发
 sed -i "s/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g" /etc/sysctl.conf
 sysctl -p
