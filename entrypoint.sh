@@ -50,5 +50,5 @@ if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
     cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
 fi
 echo "使用pm2启动clash进程" 
-pm2-runtime start clash
+pm2-docker start clash
 tail -f /dev/null
