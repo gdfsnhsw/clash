@@ -49,6 +49,8 @@ if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
     echo "移动Country.mmdb文件"
     cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
 fi
-echo "使用pm2启动clash进程" 
-pm2-docker start clash
+#echo "使用pm2启动clash进程" 
+#pm2-docker start clash
+echo "使用supervisord启动clash进程" 
+supervisord -c /etc/supervisord.conf
 tail -f /dev/null
