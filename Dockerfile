@@ -3,7 +3,7 @@ ENV VER=2021.04.08
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN set -ex \
         && apk update && apk upgrade \
-        && apk add ca-certificates tzdata wget bash yarn iptables  \
+        && apk add ca-certificates tzdata wget bash yarn supervisor iptables  \
         && yarn global add pm2  \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
