@@ -49,7 +49,6 @@ if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
     echo "移动Country.mmdb文件"
     cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
 fi
-rm -r /tmp/Country.mmdb
 echo "使用supervisord启动clash进程" 
 supervisord -c /etc/supervisord.conf
 echo "supervisord启动clash进程成功" 
