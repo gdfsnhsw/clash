@@ -12,7 +12,7 @@ RUN if [ $(arch) == x86_64 ]; then     linux=linux-amd64;     wget -P /usr/bin h
 RUN wget -P /tmp https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb
 RUN wget https://github.com/haishanh/yacd/releases/download/v0.2.15/yacd.tar.xz
 RUN mkdir /etc/supervisor.d
-ADD clash.ini /etc/supervisor.d/clash.ini
+ADD /script/clash.ini /etc/supervisor.d/clash.ini
 VOLUME /root/.config/clash
 EXPOSE 53 7890 7891 7892 7893 9090
 ADD entrypoint.sh /entrypoint.sh
