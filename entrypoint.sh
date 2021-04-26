@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # 开启转发
 sed -i "s/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g" /etc/sysctl.conf
 sysctl -p
@@ -49,7 +48,7 @@ if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
     echo "移动Country.mmdb文件"
     cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
 fi
-echo "使用supervisord启动clash进程" 
-supervisord -c /etc/supervisord.conf
-echo "supervisord启动clash进程成功" 
+##apk add supervisor
+##supervisord -c /etc/supervisord.conf
+clash
 tail -f /dev/null
