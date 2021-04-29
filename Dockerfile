@@ -1,5 +1,6 @@
 FROM alpine
 ENV VER=2021.04.08
+ENV clash_go=false
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN set -ex \
         && apk update && apk upgrade \
