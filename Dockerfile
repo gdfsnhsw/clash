@@ -15,8 +15,7 @@ RUN mkdir /etc/supervisor.d
 ADD /script/clash.ini /etc/supervisor.d/clash.ini
 VOLUME /root/.config/clash
 EXPOSE 53 7890 7891 7892 7893 9090
-ADD /s6-overlay/etc/cont-init.d /s6-overlay/etc/cont-init.d
-if [ -d /etc/cont-init.d ]; then      rm -rf /etc/cont-init.d;     ln -sf /s6-overlay/etc/cont-init.d /etc/cont-init.d; fi
+ADD /s6-overlay/etc/cont-init.d /etc/cont-init.d
 #ADD entrypoint.sh /entrypoint.sh
 #RUN chmod +x /entrypoint.sh
 #ENTRYPOINT /entrypoint.sh
