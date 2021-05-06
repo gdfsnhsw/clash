@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv bash
+
+echo -e "\n======================== 启动clash程序 ========================\n"
+clash

@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bash
+
+echo -e "\n======================== 挂载面板和Country.mmdb ========================\n"
+if [ ! -e '/root/.config/clash/dashboard/index.html' ]; then
+    echo "开始移动面板文件到dashboard目录"
+    tar -xvf yacd.tar.xz
+    mkdir -p /root/.config/clash/dashboard
+    mv /public/* /root/.config/clash/dashboard
+fi
+
+if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
+    echo "移动Country.mmdb文件"
+    cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
+fi
