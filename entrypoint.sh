@@ -48,7 +48,14 @@ if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
     echo "移动Country.mmdb文件"
     cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
 fi
-##apk add supervisor
-##supervisord -c /etc/supervisord.conf
-clash
+
+echo -e "======================== 6. 启动clash程序 ========================\n"
+if [[ $clash_go == true ]]; then
+    apk add supervisor
+    supervisord -c /etc/supervisord.conf
+    echo -e "supervisord启动clash成功..."
+elif [[ $clash_go == false ]]; then
+    echo -e "启动clash成功"
+    clash
+fi
 tail -f /dev/null
