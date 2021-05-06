@@ -18,4 +18,4 @@ EXPOSE 53 7890 7891 7892 7893 9090
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 #ENTRYPOINT /entrypoint.sh
-ENTRYPOINT ["/tini", "--", "/entrypoint.sh"]
+ENTRYPOINT ["tini", "--", "/entrypoint.sh"]
