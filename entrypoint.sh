@@ -67,7 +67,7 @@ if [[ $tun == true ]]; then
     mkdir -p /lib/modules/$(uname -r)
     modprobe tun
     echo -e "如果没有报错就成功开启tun"
-elif [[ $shell == false ]]; then
+elif [[ $tun == false ]]; then
     echo -e "你没有设置开启tun变量"
 fi
 echo -e "======================== 4. 启动clash程序 ========================\n"
