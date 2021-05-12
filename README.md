@@ -17,11 +17,12 @@ docker run --restart=always \
   --net macnet \
   --ip 192.168.50.66 \
   -v /docker/clash:/root/.config/clash \
+  -e tun=false \
   -e shell=false \
   -e clash_go=false \
   byxiaopeng/clash
 ```
-如果想自定义shell脚本 请把变量shell设置成true
+想要开启tun就把tun变量改成true
 
 修改tun.sh脚本文件并重启容器
 
