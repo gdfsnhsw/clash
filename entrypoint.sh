@@ -61,7 +61,16 @@ if [[ $shell == true ]]; then
 elif [[ $shell == false ]]; then
     echo -e "自定义shell代码未设置"
 fi
-echo -e "======================== 3. 启动clash程序 ========================\n"
+
+echo -e "======================== 3. 是否内核开启tun ========================\n"
+if [[ $tun == true ]]; then
+    mkdir -p /lib/modules/$(uname -r)
+    modprobe tun
+    echo -e "如果没有报错就成功开启tun"
+elif [[ $shell == false ]]; then
+    echo -e "你没有设置开启tun变量"
+fi
+echo -e "======================== 4. 启动clash程序 ========================\n"
 if [[ $clash_go == true ]]; then
     apk add supervisor
     supervisord -c /etc/supervisord.conf
