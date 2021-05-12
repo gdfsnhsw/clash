@@ -37,6 +37,7 @@ iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
 iptables -t mangle -A clash -p tcp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A clash -p udp -j TPROXY --on-port 7893 --tproxy-mark 1
 iptables -t mangle -A PREROUTING -j clash
+echo -e "======================== 1. 判断目录是否存在文件 ========================\n"
 if [ ! -e '/root/.config/clash/dashboard/index.html' ]; then
     echo "开始移动面板文件到dashboard目录"
     tar -xvf yacd.tar.xz
@@ -50,17 +51,17 @@ if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
 fi
 
 if [ ! -e '/root/.config/clash/tun.sh' ]; then
-    echo "移动Country.mmdb文件"
+    echo "移动tun.sh文件"
     cp /tmp/tun.sh /root/.config/clash/tun.sh
 fi
-echo -e "======================== 1. 自定义shell代码 ========================\n"
+echo -e "======================== 2. 自定义shell代码 ========================\n"
 if [[ $shell == true ]]; then
     bash /root/.config/clash/tun.sh
     echo -e "自定义shell代码执行成功..."
 elif [[ $shell == false ]]; then
     echo -e "自定义shell代码未设置"
 fi
-echo -e "======================== 2. 启动clash程序 ========================\n"
+echo -e "======================== 3. 启动clash程序 ========================\n"
 if [[ $clash_go == true ]]; then
     apk add supervisor
     supervisord -c /etc/supervisord.conf
