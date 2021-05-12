@@ -1,5 +1,6 @@
 FROM alpine
 ENV VER=2021.05.08
+ENV shell=false
 ENV clash_go=false
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN set -ex \
@@ -13,6 +14,8 @@ RUN wget -P /tmp https://github.com/Dreamacro/maxmind-geoip/releases/latest/down
 RUN wget https://github.com/haishanh/yacd/releases/download/v0.2.15/yacd.tar.xz
 RUN mkdir /etc/supervisor.d
 ADD /script/clash.ini /etc/supervisor.d/clash.ini
+ADD /script/tun.sh /tmp/tun.sh
+RUN chmod +x /tmp/tun.sh
 VOLUME /root/.config/clash
 EXPOSE 53 7890 7891 7892 7893 9090
 ADD entrypoint.sh /entrypoint.sh
