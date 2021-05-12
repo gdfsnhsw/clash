@@ -1,16 +1,16 @@
 # clash
 
 clash
-``` sh
 开启混杂模式
+``` sh
 ip link set eth0 promisc on
 ```
-``` sh
 docker创建网络,注意将网段改为你自己的
+``` sh
 docker network create -d macvlan --subnet=192.168.50.0/24 --gateway=192.168.50.1 -o parent=eth0 macnet
 ```
+# 推荐部署容器命令
 ``` sh
-# 推荐使用命令
 docker run --restart=always \
   -d --name clash \
   --privileged=true \
