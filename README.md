@@ -24,6 +24,7 @@ docker run --restart=always \
 ```
 想要开启tun就把tun变量改成true
 
-修改tun.sh脚本文件并重启容器
-
+重启clash容器代码
+``` sh
 docker restart clash
+```
