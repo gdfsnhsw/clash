@@ -23,6 +23,6 @@ docker run --restart=always \
 ```
 如果想自定义shell脚本 请把变量shell设置成true
 
-修复tun.sh脚本文件并重启容器
+修改tun.sh脚本文件并重启容器
 
 docker restart clash
