@@ -21,9 +21,8 @@ docker run --restart=always \
   -e clash_go=false \
   byxiaopeng/clash
 ```
-# 如果想自定义shell脚本 请把变量shell设置成true  并且在映射的/docker/clash目录里面新建tun.sh
-例子
-``` sh
-#!/bin/bash
-mkdir /lib/modules/4.4.167
-modprobe tun
+如果想自定义shell脚本 请把变量shell设置成true
+
+修复tun.sh脚本文件并重启容器
+
+docker restart clash
