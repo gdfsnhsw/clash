@@ -12,7 +12,7 @@ docker network create -d macvlan --subnet=192.168.50.0/24 --gateway=192.168.50.1
 ``` sh
 # 推荐使用命令
 docker -itd \
-  -d --name clash \
+  --name clash \
   --restart=always \
   --privileged=true \
   --net macnet \
