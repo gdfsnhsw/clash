@@ -1,5 +1,6 @@
 FROM alpine
 ENV VER=2021.05.08
+ENV tun=false
 ENV shell=false
 ENV clash_go=false
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
