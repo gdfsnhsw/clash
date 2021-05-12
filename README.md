@@ -18,8 +18,8 @@ docker -itd \
   --net macnet \
   --ip 192.168.50.66 \
   -v /docker/clash:/root/.config/clash \
-  - shell=false \
-  - clash_go=false \
+  -e shell=false \
+  -e clash_go=false \
   byxiaopeng/clash
 ```
 # 如果想自定义shell脚本 请把变量shell设置成true  并且在映射的/docker/clash目录里面新建tun.sh
