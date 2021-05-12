@@ -16,7 +16,7 @@ RUN wget https://github.com/haishanh/yacd/releases/download/v0.2.15/yacd.tar.xz
 RUN mkdir /etc/supervisor.d
 ADD /script/clash.ini /etc/supervisor.d/clash.ini
 ADD /script/shell.sh /tmp/shell.sh
-RUN chmod +x /tmp/tun.sh
+RUN chmod +x /tmp/shell.sh
 VOLUME /root/.config/clash
 EXPOSE 53 7890 7891 7892 7893 9090
 ADD entrypoint.sh /entrypoint.sh
