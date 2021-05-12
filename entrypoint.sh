@@ -50,13 +50,13 @@ if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
     cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
 fi
 
-if [ ! -e '/root/.config/clash/tun.sh' ]; then
-    echo "移动tun.sh文件"
-    cp /tmp/tun.sh /root/.config/clash/tun.sh
+if [ ! -e '/root/.config/clash/shell.sh' ]; then
+    echo "移动shell.sh文件"
+    cp /tmp/shell.sh /root/.config/clash/shell.sh
 fi
 echo -e "======================== 2. 自定义shell代码 ========================\n"
 if [[ $shell == true ]]; then
-    bash /root/.config/clash/tun.sh
+    bash /root/.config/clash/shell.sh
     echo -e "自定义shell代码执行成功..."
 elif [[ $shell == false ]]; then
     echo -e "自定义shell代码未设置"
