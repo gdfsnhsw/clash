@@ -48,9 +48,13 @@ if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
     echo "移动Country.mmdb文件"
     cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
 fi
+
+if [ ! -e '/root/.config/clash/tun.sh' ]; then
+    echo "移动Country.mmdb文件"
+    cp /tmp/tun.sh /root/.config/clash/tun.sh
+fi
 echo -e "======================== 1. 自定义shell代码 ========================\n"
 if [[ $shell == true ]]; then
-    chmod +x /root/.config/clash/tun.sh
     bash /root/.config/clash/tun.sh
     echo -e "自定义shell代码执行成功..."
 elif [[ $shell == false ]]; then
