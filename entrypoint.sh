@@ -48,8 +48,15 @@ if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
     echo "移动Country.mmdb文件"
     cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
 fi
-
-echo -e "======================== 6. 启动clash程序 ========================\n"
+echo -e "======================== 1. 自定义shell代码 ========================\n"
+if [[ $shell == true ]]; then
+    chmod +x /root/.config/clash/tun.sh
+    bash /root/.config/clash/tun.sh
+    echo -e "自定义shell代码执行成功..."
+elif [[ $shell == false ]]; then
+    echo -e "自定义shell代码未设置"
+fi
+echo -e "======================== 2. 启动clash程序 ========================\n"
 if [[ $clash_go == true ]]; then
     apk add supervisor
     supervisord -c /etc/supervisord.conf
