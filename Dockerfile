@@ -14,6 +14,7 @@ RUN if [ $(arch) == x86_64 ]; then     linux=linux-amd64;     wget -P /usr/bin h
 RUN wget -P /tmp https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb
 RUN wget https://github.com/Dreamacro/clash-dashboard/archive/refs/heads/gh-pages.zip
 RUN mkdir /etc/supervisor.d
+RUN mkdir -p /etc/nftables
 ADD /script/clash.ini /etc/supervisor.d/clash.ini
 ADD /script/shell.sh /tmp/shell.sh
 RUN chmod +x /tmp/shell.sh
