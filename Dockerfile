@@ -17,6 +17,9 @@ RUN mkdir /etc/supervisor.d
 RUN mkdir -p /etc/nftables
 ADD /script/clash.ini /etc/supervisor.d/clash.ini
 ADD /script/shell.sh /tmp/shell.sh
+ADD /script/chnroute.nft /etc/nftables/chnroute.nft
+ADD /script/private.nft /etc/nftables/private.nft
+ADD /script/nftables-tun.conf /etc/nftables.conf
 RUN chmod +x /tmp/shell.sh
 VOLUME /root/.config/clash
 EXPOSE 53 7890 7891 7892 7893 9090
