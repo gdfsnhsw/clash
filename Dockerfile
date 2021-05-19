@@ -12,7 +12,7 @@ RUN set -ex \
 RUN if [ $(arch) == aarch64 ]; then     linux=linux-armv8;     wget -P /usr/bin https://github.com/Dreamacro/clash/releases/download/premium/clash-$linux-$VER.gz;     gunzip /usr/bin/clash-$linux-$VER.gz;     mv /usr/bin/clash-$linux-$VER /usr/bin/clash;     chmod +x /usr/bin/clash; fi
 RUN if [ $(arch) == x86_64 ]; then     linux=linux-amd64;     wget -P /usr/bin https://github.com/Dreamacro/clash/releases/download/premium/clash-$linux-$VER.gz;     gunzip /usr/bin/clash-$linux-$VER.gz;     mv /usr/bin/clash-$linux-$VER /usr/bin/clash;     chmod +x /usr/bin/clash; fi
 RUN wget -P /tmp https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb
-RUN wget https://github.com/haishanh/yacd/releases/download/v0.2.15/yacd.tar.xz
+RUN wget https://github.com/Dreamacro/clash-dashboard/archive/refs/heads/gh-pages.zip
 RUN mkdir /etc/supervisor.d
 ADD /script/clash.ini /etc/supervisor.d/clash.ini
 ADD /script/shell.sh /tmp/shell.sh
