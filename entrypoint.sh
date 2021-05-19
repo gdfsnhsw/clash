@@ -3,7 +3,15 @@
 sed -i "s/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g" /etc/sysctl.conf
 sysctl -p
 
+# 配置路由表
+ip link set utun up
+ip address replace 198.18.0.1/16 dev utun
+ip route replace default dev utun table 129
+ip rule add fwmark 169 table 129
 
+sudo sh -c "nft flush ruleset && nft -f /etc/nftables.conf"
+
+systemctl enable nftables.service
 
 echo -e "======================== 1. 判断目录是否存在文件 ========================\n"
 if [ ! -e '/root/.config/clash/dashboard/index.html' ]; then
