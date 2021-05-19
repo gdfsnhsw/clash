@@ -16,7 +16,7 @@ systemctl enable nftables.service
 echo -e "======================== 1. 判断目录是否存在文件 ========================\n"
 if [ ! -e '/root/.config/clash/dashboard/index.html' ]; then
     echo "开始移动面板文件到dashboard目录"
-    unzip clash-dashboard-gh-pages.zip
+    unzip gh-pages.zip
     mkdir -p /root/.config/clash/dashboard
     mv /clash-dashboard-gh-pages/* /root/.config/clash/dashboard
 fi
