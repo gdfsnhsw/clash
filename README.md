@@ -24,6 +24,11 @@ docker run --restart=always \
 ```
 想要开启tun就把tun变量改成true
 
+
+tun路由表参考
+
+https://lancellc.gitbook.io/clash/start-clash/clash-tun-mode/setup-system-stack-in-real-ip-mode
+
 重启clash容器代码
 ``` sh
 docker restart clash
