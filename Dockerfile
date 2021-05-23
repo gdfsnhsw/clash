@@ -1,5 +1,6 @@
 FROM alpine
 ENV VER=2021.05.08
+ENV iptables=true
 ENV tun=false
 ENV shell=false
 ENV clash_go=false
