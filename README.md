@@ -17,6 +17,7 @@ docker run --restart=always \
   --net macnet \
   --ip 192.168.50.66 \
   -v /docker/clash:/root/.config/clash \
+  -e iptables=true \
   -e tun=false \
   -e shell=false \
   -e clash_go=false \
@@ -24,6 +25,7 @@ docker run --restart=always \
 ```
 想要开启tun就把tun变量改成true
 
+路由表改成iptables.sh文件    修改后重启容器即可生效
 
 tun路由表参考
 
