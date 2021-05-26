@@ -53,6 +53,6 @@ if [[ $clash_go == true ]]; then
     echo -e "supervisord启动clash成功..."
 elif [[ $clash_go == false ]]; then
     echo -e "启动clash成功"
-    clash
+    pm2-docker start clash --name clash
 fi
 tail -f /dev/null
