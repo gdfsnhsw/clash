@@ -55,4 +55,4 @@ elif [[ $clash_go == false ]]; then
     echo -e "启动clash成功"
     pm2-docker start clash --name clash
 fi
-tail -f /dev/null
+#tail -f /dev/null
