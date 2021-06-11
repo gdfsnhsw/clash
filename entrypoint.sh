@@ -51,8 +51,8 @@ if [[ $clash_go == true ]]; then
     apk add supervisor
     supervisord -c /etc/supervisord.conf
     echo -e "supervisord启动clash成功..."
+    tail -f /dev/null
 elif [[ $clash_go == false ]]; then
     echo -e "启动clash成功"
     pm2-docker start clash --name clash
 fi
-#tail -f /dev/null
