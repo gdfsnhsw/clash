@@ -7,7 +7,7 @@ ENV clash_go=false
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN set -ex \
         && apk update && apk upgrade \
-        && apk add ca-certificates tzdata wget bash ipset iptables tini nodejs npm \
+        && apk add ca-certificates tzdata wget bash ipset iptables nodejs npm \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && npm install -g pm2 \
         && echo "Asia/Shanghai" > /etc/timezone
@@ -28,4 +28,3 @@ EXPOSE 53 7890 7891 7892 7893 9090
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT /entrypoint.sh
-##ENTRYPOINT ["tini", "--", "/entrypoint.sh"]
