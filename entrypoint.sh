@@ -11,8 +11,8 @@ if [ ! -e '/root/.config/clash/dashboard/index.html' ]; then
 fi
 
 if [ ! -e '/root/.config/clash/Country.mmdb' ]; then
-    echo "移动Country.mmdb文件"
-    cp /tmp/Country.mmdb /root/.config/clash/Country.mmdb
+    echo "下载Country.mmdb文件"
+    wget -P /root/.config/clash https://hub.fastgit.org/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb
 fi
 
 if [ ! -e '/root/.config/clash/shell.sh' ]; then
