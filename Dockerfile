@@ -1,5 +1,5 @@
 FROM alpine
-ENV VER=2021.05.08
+ENV VER=2021.07.04
 ENV iptables=true
 ENV tun=false
 ENV shell=false
