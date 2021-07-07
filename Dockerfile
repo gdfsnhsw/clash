@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:edge
 ENV VER=2021.07.03
 ENV iptables=true
 ENV tun=false
