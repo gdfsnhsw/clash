@@ -4,7 +4,6 @@ ENV iptables=true
 ENV tun=false
 ENV shell=false
 ENV clash_go=false
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN set -ex \
         && apk update && apk upgrade \
         && apk add ca-certificates tzdata wget bash iptables nodejs npm \
