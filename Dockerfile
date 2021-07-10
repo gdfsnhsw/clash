@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine
 ENV VER=2021.07.03
 ENV iptables=true
 ENV tun=false
@@ -7,10 +7,10 @@ ENV clash_go=false
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN set -ex \
         && apk update && apk upgrade \
-        && apk add ca-certificates tzdata wget bash ipset iptables nodejs npm \
+        && apk add ca-certificates tzdata wget bash iptables nodejs npm \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-        && npm install -g pm2 \
-        && echo "Asia/Shanghai" > /etc/timezone
+        && echo "Asia/Shanghai" > /etc/timezone \
+        && npm install -g pm2
 RUN if [ $(arch) == aarch64 ]; then     linux=linux-armv8;     wget -P /usr/bin https://github.com/Dreamacro/clash/releases/download/premium/clash-$linux-$VER.gz;     gunzip /usr/bin/clash-$linux-$VER.gz;     mv /usr/bin/clash-$linux-$VER /usr/bin/clash;     chmod +x /usr/bin/clash; fi
 RUN if [ $(arch) == x86_64 ]; then     linux=linux-amd64;     wget -P /usr/bin https://github.com/Dreamacro/clash/releases/download/premium/clash-$linux-$VER.gz;     gunzip /usr/bin/clash-$linux-$VER.gz;     mv /usr/bin/clash-$linux-$VER /usr/bin/clash;     chmod +x /usr/bin/clash; fi
 RUN wget https://github.com/haishanh/yacd/releases/download/v0.3.2/yacd.tar.xz
