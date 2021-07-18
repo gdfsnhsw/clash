@@ -6,7 +6,7 @@ ENV shell=false
 ENV clash_go=false
 RUN set -ex \
         && apk update && apk upgrade \
-        && apk add ca-certificates tzdata wget bash iptables nodejs npm \
+        && apk add ca-certificates tzdata wget bash iptables nodejs-current npm \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone \
         && npm install -g pm2
