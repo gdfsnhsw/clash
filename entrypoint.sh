@@ -5,6 +5,7 @@ sysctl -p
 echo -e "======================== 0. 判断目录是否存在文件 ========================\n"
 if [ ! -e '/root/.config/clash/dashboard/index.html' ]; then
     echo "开始移动面板文件到dashboard目录"
+    wget https://download.fastgit.org/haishanh/yacd/releases/download/v0.3.3/yacd.tar.xz
     tar -xvf yacd.tar.xz
     mkdir -p /root/.config/clash/dashboard
     mv /public/* /root/.config/clash/dashboard
