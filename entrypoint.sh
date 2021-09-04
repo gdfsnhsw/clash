@@ -2,7 +2,13 @@
 # 开启转发
 sed -i "s/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g" /etc/sysctl.conf
 sysctl -p
-echo -e "======================== 0. 判断目录是否存在文件 ========================\n"
+echo -e "======================== 0.1 判断是否安装clash文件 ========================\n"
+if [ ! -e '/usr/bin/clash' ]; then
+    if [ $(arch) == aarch64 ]; then     wget -P /usr/bin https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-armv8-$VER.gz;     gunzip /usr/bin/clash-linux-armv8-$VER.gz;     mv /usr/bin/clash-linux-armv8-$VER /usr/bin/clash;     chmod +x /usr/bin/clash; fi
+    if [ $(arch) == x86_64 ]; then     wget -P /usr/bin https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-$VER.gz;     gunzip /usr/bin/clash-linux-amd64-$VER.gz;     mv /usr/bin/clash-linux-amd64-$VER /usr/bin/clash;     chmod +x /usr/bin/clash; fi
+    echo "下载clash完成"
+fi
+echo -e "======================== 0.2 判断目录是否存在文件 ========================\n"
 if [ ! -e '/root/.config/clash/dashboard/index.html' ]; then
     echo "开始移动面板文件到dashboard目录"
     rm -rf /root/.config/clash/dashboard
