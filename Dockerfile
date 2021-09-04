@@ -1,9 +1,9 @@
 FROM alpine
-ENV VER=2021.07.03
-ENV iptables=true
-ENV tun=false
-ENV shell=false
-ENV clash_go=false
+ENV VER=2021.07.03 \
+    iptables=true \
+    tun=false \
+    shell=false \
+    clash_go=false
 ADD /script/clash.ini /etc/supervisor.d/clash.ini
 ADD /script/shell.sh /tmp/shell.sh
 ADD /script/iptables.sh /tmp/iptables.sh
