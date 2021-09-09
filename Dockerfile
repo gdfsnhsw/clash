@@ -7,7 +7,8 @@ ADD /script/clash.ini /etc/supervisor.d/clash.ini
 ADD /script/shell.sh /tmp/shell.sh
 ADD /script/iptables.sh /tmp/iptables.sh
 RUN set -ex \
-        && apk update && apk upgrade \
+        && apk update \
+        && apk upgrade \
         && apk add ca-certificates tzdata wget curl bash iptables jq nodejs-current npm \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone \
