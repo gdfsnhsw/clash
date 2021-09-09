@@ -1,6 +1,5 @@
 FROM alpine
-ENV VER=2021.09.07 \
-    iptables=true \
+ENV iptables=true \
     tun=false \
     shell=false \
     clash_go=false
@@ -9,7 +8,7 @@ ADD /script/shell.sh /tmp/shell.sh
 ADD /script/iptables.sh /tmp/iptables.sh
 RUN set -ex \
         && apk update && apk upgrade \
-        && apk add ca-certificates tzdata wget bash iptables nodejs-current npm \
+        && apk add ca-certificates tzdata wget bash iptables jq nodejs-current npm \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone \
         && npm install -g pm2 \
