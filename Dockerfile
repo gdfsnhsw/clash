@@ -9,7 +9,7 @@ ADD /script/iptables.sh /tmp/iptables.sh
 RUN set -ex \
         && apk update \
         && apk upgrade \
-        && apk add ca-certificates tzdata wget curl bash iptables jq nodejs-current npm \
+        && apk add ca-certificates tzdata wget curl bash iptables jq nodejs npm \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone \
         && npm install -g pm2 \
