@@ -5,7 +5,8 @@ sysctl -p
 
 echo -e "======================== 0.1 判断是否安装clash文件 ========================\n"
 if [ ! -e '/usr/bin/clash' ]; then
-    clash=$(curl -s https://api.github.com/repos/Dreamacro/clash/releases | jq -r .[]."name" | sed "s/Premium //" | tail -n 18 | grep -m1 -E "([0-9]{1,2}\.?){3,4}$")
+    #clash=$(curl -s https://api.github.com/repos/Dreamacro/clash/releases | jq -r .[]."name" | sed "s/Premium //" | tail -n 18 | grep -m1 -E "([0-9]{1,2}\.?){3,4}$")
+    clash=2021.09.15
     echo "当前获取clash版本为$clash"
     if [ $(arch) == aarch64 ]; then     wget -P /usr/bin https://download.fastgit.org/Dreamacro/clash/releases/download/premium/clash-linux-armv8-$clash.gz;     gunzip /usr/bin/clash-linux-armv8-$clash.gz;     mv /usr/bin/clash-linux-armv8-$clash /usr/bin/clash;     chmod +x /usr/bin/clash; fi
     if [ $(arch) == x86_64 ]; then     wget -P /usr/bin https://download.fastgit.org/Dreamacro/clash/releases/download/premium/clash-linux-amd64-$clash.gz;     gunzip /usr/bin/clash-linux-amd64-$clash.gz;     mv /usr/bin/clash-linux-amd64-$clash /usr/bin/clash;     chmod +x /usr/bin/clash; fi
