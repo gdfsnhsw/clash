@@ -16,7 +16,7 @@ if [ ! -e '/root/.config/clash/dashboard/index.html' ]; then
     echo "开始移动面板文件到dashboard目录"
     rm -rf /root/.config/clash/dashboard
     mkdir -p /root/.config/clash/dashboard
-    wget https://download.fastgit.org/haishanh/yacd/releases/download/v0.3.3/yacd.tar.xz
+    wget https://download.fastgit.org/haishanh/yacd/releases/download/v0.3.4/yacd.tar.xz
     tar -xvf yacd.tar.xz
     mv /public/* /root/.config/clash/dashboard
 fi
