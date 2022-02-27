@@ -15,7 +15,7 @@ docker run --restart=always \
   -d --name clash \
   --privileged=true \
   --net macnet \
-  --ip 192.168.50.66 \
+  --ip 192.168.50.6 \
   -v /docker/clash:/root/.config/clash \
   -e iptables=true \
   -e tun=false \
