@@ -19,8 +19,6 @@ docker run --restart=always \
   -v /docker/clash:/root/.config/clash \
   -e iptables=true \
   -e tun=false \
-  -e shell=false \
-  -e clash_go=false \
   byxiaopeng/clash
 ```
 想要开启tun就把tun变量改成true
